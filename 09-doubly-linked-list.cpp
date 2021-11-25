@@ -7,12 +7,12 @@ class Node
 public:
     int a;
     Node *next;
+    Node *pre;
 
     void insertAtFirst(Node **temp)
     {
-        cout << "Temp Value Start " << *temp << endl;
         Node *element = new Node();
-        cout << "element Value Start " << element << endl;
+        Node *head = *temp;
         if (*temp == NULL)
         {
             cout << "Enter element value ";
@@ -24,16 +24,24 @@ public:
             cout << "Enter element value ";
             cin >> element->a;
             element->next = *temp;
+            element->pre = NULL;
+            head->pre = element;
             *temp = element;
         }
-        cout << "Temp Value End " << *temp << endl;
     }
     void traverseList(Node *temp)
     {
+        int i = 1;
         while (temp != NULL)
         {
-            cout << temp->a << endl;
+            cout << "\n";
+            cout << "Memory " << i << " -- " << temp << endl;
+            cout << "Value             --  " << temp->a << endl;
+            cout << "Next Address      --  " << temp->next << endl;
+            cout << "Previous Address  --  " << temp->pre << endl;
+            cout << "\n";
             temp = temp->next;
+            i++;
         }
     }
 };
