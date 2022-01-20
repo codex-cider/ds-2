@@ -4,5 +4,11 @@
         "iostream": "cpp",
         "vector": "cpp",
         "xmemory": "cpp"
+    },
+    "files.exclude": {
+        "*.exe": true,
+        "*.cWithExt": true,
+        "*.cppWithExt": true,
+        "tempCodeRunnerFile.c": true,
     }
 }
